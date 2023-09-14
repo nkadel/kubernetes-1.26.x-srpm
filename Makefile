@@ -7,14 +7,10 @@ LANG=C
 
 MOCKS+=centos-stream+epel-8-x86_64
 MOCKS+=centos-stream+epel-9-x86_64
-MOCKS+=fedora-38-x86_64
+#MOCKS+=fedora-38-x86_64
 
-MOCKCFGS+=kuberepo-8-x86_64
-MOCKCFGS+=kuberepo-9-x86_64
-MOCKCFGS+=kuberepo-f38-x86_64
-
-#REPOBASEDIR=/var/www/linux/kuberepo
-REPOBASEDIR:=`/bin/pwd`/../kuberepo
+#REPOBASEDIR=/var/www/linux/repo
+REPOBASEDIR:=`/bin/pwd`/repo
 
 SPEC := `ls *.spec`
 
@@ -70,6 +66,7 @@ install:: $(MOCKS)
 	    esac; \
 	    rpmdir=$(REPOBASEDIR)/$$yumrelease/$$yumarch; \
 	    srpmdir=$(REPOBASEDIR)/$$yumrelease/SRPMS; \
+	    install -d $$rpmdir $$srpmdir; \
 	    echo "Pushing SRPMS to $$srpmdir"; \
 	    rsync -av $$repo/*.src.rpm --no-owner --no-group $$repo/*.src.rpm $$srpmdir/. || exit 1; \
 	    createrepo_c -q $$srpmdir/.; \
