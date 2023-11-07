@@ -76,12 +76,14 @@ Requires: kubernetes-node = %{version}-%{release}
 %package master
 Summary: Kubernetes services for control plane host
 
-BuildRequires: golang >= 1.19.6
+#BuildRequires: golang >= 1.19.6
+BuildRequires: /usr/bin/go
 BuildRequires: systemd
 BuildRequires: rsync
 %if 0%{?fedora}
 BuildRequires: go-md2man
-BuildRequires: go-bindata
+#BuildRequires: go-bindata
+BuildRequires: /usr/bin/go
 %endif
 
 Requires(pre): shadow-utils
@@ -98,7 +100,9 @@ Kubernetes services for control plane host
 %package node
 Summary: Kubernetes services for worker node host
 
+%if 0%{?rhel} || 0%{?fedora}
 Requires: (containerd or cri-o)
+%endif
 Suggests: containerd
 Requires: conntrack-tools
 
@@ -107,7 +111,8 @@ BuildRequires: systemd
 BuildRequires: rsync
 %if 0%{?fedora}
 BuildRequires: go-md2man
-BuildRequires: go-bindata
+#BuildRequires: go-bindata
+BuildRequires: /usr/bin/go
 %endif
 
 Requires(pre): shadow-utils
@@ -138,6 +143,7 @@ Summary: Kubernetes client tools
 
 BuildRequires: golang >= 1.19.6
 #BuildRequires: go-bindata
+BuildRequires: /usr/bin/go
 BuildRequires: make
 
 %description client
