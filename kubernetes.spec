@@ -34,7 +34,7 @@
 
 ##############################################
 Name:           kubernetes
-Version:        1.26.2
+Version:        1.28.4
 Release:        %autorelease
 Summary:        Container cluster management
 License:        ASL 2.0
