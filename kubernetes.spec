@@ -402,6 +402,9 @@ fi
 
 ############################################
 %changelog
+* Thu Nov 30 2023 Nico Kadel-Garcia <nkadel@gmail.com> - 1.28.4-2
+- Update to 1.28.4
+
 * Thu Mar 02 2023 Bradley G Smith <bradley.g.smith@gmail.com> - 1.26.2-2
 - update sources
 
