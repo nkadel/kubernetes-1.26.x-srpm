@@ -8,7 +8,6 @@ WorkingDirectory=/var/lib/kubelet
 EnvironmentFile=-/etc/kubernetes/config
 EnvironmentFile=-/etc/kubernetes/kubelet
 ExecStart=/usr/bin/kubelet \
-	    $KUBE_LOGTOSTDERR \
 	    $KUBE_LOG_LEVEL \
 	    $KUBELET_KUBECONFIG \
 	    $KUBELET_ADDRESS \

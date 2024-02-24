@@ -9,8 +9,10 @@
 #   kube-scheduler.service
 #   kubelet.service
 #   kube-proxy.service
+
+# deprecated in v1.23; remove in v1.26
 # logging to stderr means we get it in the systemd journal
-KUBE_LOGTOSTDERR="--logtostderr=true"
+# KUBE_LOGTOSTDERR="--logtostderr=true"
 
 # journal message level, 0 is debug
 KUBE_LOG_LEVEL="--v=0"
