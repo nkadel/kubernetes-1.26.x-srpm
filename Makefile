@@ -8,7 +8,7 @@ LANG=C
 MOCKS+=centos-stream+epel-8-x86_64
 MOCKS+=centos-stream+epel-9-x86_64
 #MOCKS+=fedora-39-x86_64
-MOCKS+=amazonlinux-2023-x86_64
+#MOCKS+=amazonlinux-2023-x86_64
 
 
 #REPOBASEDIR=/var/www/linux/repo
